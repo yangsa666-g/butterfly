@@ -278,20 +278,7 @@ make azure-status             # view status and endpoints
 ```
 
 Run `make help` to see all available targets. See `DEPLOYMENT.AZURE.md` for the full Azure deployment guide.
-
-## Azure Production Deployment
-
-### Resource Mapping
-
-| Azure Resource                          | Type                         | Purpose                                                                                |
-| --------------------------------------- | ---------------------------- | -------------------------------------------------------------------------------------- |
-| `cyberbee`                              | App Service (Web App)        | Next.js frontend (port 3000) + NestJS backend (loopback 3001) in a single merged image |
-| `cyberbee-services`                     | Container App                | `ingestion-worker` + `export-worker` (two containers, one revision)                    |
-| `dev-butterfly`                         | ACI                          | Mosquitto MQTT broker, public TCP 1883                                                 |
-| `cyberbee`                              | Azure Cache for Redis        | BullMQ job queue and Entra login-code store (TLS port 6380)                            |
-| `cyberbeestorage` / `butterfly-exports` | Storage Account / File Share | Export files, mounted at `/app/exports` on Web App and Container App                   |
-| `butterfly-pg`                          | PostgreSQL Flexible Server   | Application database                                                                   |
-| `cyberbee.azurecr.cn`                   | Azure Container Registry     | Container images, tagged by git SHA                                                    |
+                                                |
 
 ### Quick Reference
 
